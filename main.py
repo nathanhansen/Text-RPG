@@ -1,3 +1,10 @@
+#############################################################
+#Dork - the text-based RPG
+#Author: Nathan Hansen
+#Version: 1.0
+#Date: 10.05.2017
+#############################################################
+
 from room import Room
 from item import Item
 from character import Enemy, Friend
