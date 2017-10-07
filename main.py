@@ -1,25 +1,23 @@
 #############################################################
 #Dork - the text-based RPG
 #Author: Nathan Hansen
-#Version: 1.0
-#Date: 10.05.2017
+#Version: 1.1
+#Date: 10.07.2017
 #############################################################
 
-from room import Room
-from item import Item
-from character import Character, Enemy, Friend
+import rpg
 
 #Let's create some rooms!
 #First up is the kithen
-kitchen = Room("Kitchen")
+kitchen = rpg.Room("Kitchen")
 kitchen.set_description("A dank and dirty room buzzing with flies.")
 
 #Then the ballroom
-ballroom = Room("Ballroom")
+ballroom = rpg.Room("Ballroom")
 ballroom.set_description("A classy room filled with game tables, books and booze.")
 
 #Finally the dining room
-dining_hall = Room("Dining Hall")
+dining_hall = rpg.Room("Dining Hall")
 dining_hall.set_description("A long and wide room filled with tables, chairs and the half-eaten remains of dinner.")
 
 #Create the links between the rooms
@@ -29,27 +27,27 @@ dining_hall.link_room(ballroom, "west")
 ballroom.link_room(dining_hall, "east")
 
 #Let's add items to the rooms
-cheese = Item("cheese", "A large hunk of golden cheddar")
+cheese = rpg.Item("cheese", "A large hunk of golden cheddar")
 kitchen.set_item(cheese)
-longsword = Item("longsword", "A long bladed weapon with a leather grip")
+longsword = rpg.Item("longsword", "A long bladed weapon with a leather grip")
 dining_hall.set_item(longsword)
 
 #Create some characters to interact with and place them in their own room
 #Your friend Miranda, who owns the house and provides some hints
-miranda = Friend("Miranda", "The home's owner. An elegant woman sitting at the kitchen table.")
+miranda = rpg.Friend("Miranda", "The home's owner. An elegant woman sitting at the kitchen table.")
 miranda.set_conversation("Well met, adventurer. What brings you to my humble home? Have you found my lost teddy bear?")
 miranda.set_gift("teddy bear")
 miranda.set_gift_conversation("To defeat the zombie in the next room you need some cheese. This is a kitchen so there should be some.")
 kitchen.set_character(miranda)
 
 #Dave is a zombie, unfortunately
-dave = Enemy("Dave", "A smelly zombie")
+dave = rpg.Enemy("Dave", "A smelly zombie")
 dave.set_conversation("Brrlgrh... rgrhl... brains...")
 dave.set_weakness("cheese")
 dining_hall.set_character(dave)
 
 #These kinds of text adventures need an orc
-reggie = Enemy("Reggie", "A hideous orc covered in scars")
+reggie = rpg.Enemy("Reggie", "A hideous orc covered in scars")
 reggie.set_conversation("Me no like you! But me no wanna fight you? What you life worth?")
 reggie.set_weakness("longsword")
 reggie.set_bribe(100)
