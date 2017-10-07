@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module character</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>character</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/nathan/Downloads/Text-RPG-master/rpg/character.py">/home/nathan/Downloads/Text-RPG-master/rpg/character.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="character.html#Character">Character</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="character.html#Enemy">Enemy</a>
+</font></dt><dt><font face="helvetica, arial"><a href="character.html#Friend">Friend</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Character">class <strong>Character</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Character-__init__"><strong>__init__</strong></a>(self, char_name, char_description)</dt><dd><tt>Creates&nbsp;a&nbsp;new&nbsp;character&nbsp;with&nbsp;a&nbsp;name&nbsp;and&nbsp;a&nbsp;description.</tt></dd></dl>
+
+<dl><dt><a name="Character-describe"><strong>describe</strong></a>(self)</dt><dd><tt>Prints&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;character&nbsp;and&nbsp;its&nbsp;description.</tt></dd></dl>
+
+<dl><dt><a name="Character-fight"><strong>fight</strong></a>(self, combat_item)</dt><dd><tt>Generic&nbsp;characters&nbsp;and&nbsp;<a href="#Friend">Friend</a>&nbsp;characters&nbsp;will&nbsp;not&nbsp;fight&nbsp;with&nbsp;the&nbsp;player.</tt></dd></dl>
+
+<dl><dt><a name="Character-get_bribe"><strong>get_bribe</strong></a>(self)</dt><dd><tt>Returns&nbsp;acharacter's&nbsp;bribe&nbsp;amount.</tt></dd></dl>
+
+<dl><dt><a name="Character-get_status"><strong>get_status</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;integer&nbsp;value&nbsp;of&nbsp;how&nbsp;many&nbsp;characters&nbsp;have&nbsp;been&nbsp;helped&nbsp;or&nbsp;defeated.</tt></dd></dl>
+
+<dl><dt><a name="Character-set_bribe"><strong>set_bribe</strong></a>(self, bribe_amount)</dt><dd><tt>Sets&nbsp;the&nbsp;bribe&nbsp;amount&nbsp;for&nbsp;a&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="Character-set_conversation"><strong>set_conversation</strong></a>(self, conversation)</dt><dd><tt>Sets&nbsp;the&nbsp;conversation&nbsp;string&nbsp;for&nbsp;a&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="Character-talk"><strong>talk</strong></a>(self)</dt><dd><tt>If&nbsp;a&nbsp;conversation&nbsp;string&nbsp;has&nbsp;been&nbsp;set&nbsp;prints&nbsp;the&nbsp;conversation&nbsp;to&nbsp;the&nbsp;player.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>victory_count</strong> = 0</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Enemy">class <strong>Enemy</strong></a>(<a href="character.html#Character">Character</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>#A&nbsp;subclass&nbsp;of&nbsp;character&nbsp;for&nbsp;enemy&nbsp;NPCs<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="character.html#Enemy">Enemy</a></dd>
+<dd><a href="character.html#Character">Character</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Enemy-__init__"><strong>__init__</strong></a>(self, char_name, char_description)</dt><dd><tt>Creates&nbsp;an&nbsp;enemy&nbsp;type&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-attempt_bribe"><strong>attempt_bribe</strong></a>(self, bribe_amount)</dt><dd><tt>Allows&nbsp;the&nbsp;player&nbsp;to&nbsp;attempt&nbsp;a&nbsp;bribe&nbsp;of&nbsp;an&nbsp;enemy.&nbsp;Success&nbsp;increases&nbsp;the&nbsp;victory&nbsp;counter.<br>
+Failure&nbsp;leads&nbsp;to&nbsp;a&nbsp;fight&nbsp;with&nbsp;the&nbsp;enemy.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-fight"><strong>fight</strong></a>(self, combat_item)</dt><dd><tt>This&nbsp;function&nbsp;allows&nbsp;the&nbsp;player&nbsp;to&nbsp;fight&nbsp;an&nbsp;enemy.&nbsp;<br>
+If&nbsp;he&nbsp;has&nbsp;the&nbsp;correct&nbsp;item,&nbsp;the&nbsp;enemy&nbsp;is&nbsp;defeated&nbsp;and&nbsp;the&nbsp;victory&nbsp;counter&nbsp;in&nbsp;incremented.&nbsp;<br>
+Otherwise,&nbsp;the&nbsp;returned&nbsp;value&nbsp;will&nbsp;end&nbsp;the&nbsp;game.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-get_weakness"><strong>get_weakness</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;set&nbsp;weakness&nbsp;of&nbsp;an&nbsp;enemy.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-set_weakness"><strong>set_weakness</strong></a>(self, weakness)</dt><dd><tt>Sets&nbsp;an&nbsp;enemies&nbsp;weakness&nbsp;for&nbsp;use&nbsp;when&nbsp;fighting&nbsp;them.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="character.html#Character">Character</a>:<br>
+<dl><dt><a name="Enemy-describe"><strong>describe</strong></a>(self)</dt><dd><tt>Prints&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;character&nbsp;and&nbsp;its&nbsp;description.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-get_bribe"><strong>get_bribe</strong></a>(self)</dt><dd><tt>Returns&nbsp;acharacter's&nbsp;bribe&nbsp;amount.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-get_status"><strong>get_status</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;integer&nbsp;value&nbsp;of&nbsp;how&nbsp;many&nbsp;characters&nbsp;have&nbsp;been&nbsp;helped&nbsp;or&nbsp;defeated.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-set_bribe"><strong>set_bribe</strong></a>(self, bribe_amount)</dt><dd><tt>Sets&nbsp;the&nbsp;bribe&nbsp;amount&nbsp;for&nbsp;a&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-set_conversation"><strong>set_conversation</strong></a>(self, conversation)</dt><dd><tt>Sets&nbsp;the&nbsp;conversation&nbsp;string&nbsp;for&nbsp;a&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-talk"><strong>talk</strong></a>(self)</dt><dd><tt>If&nbsp;a&nbsp;conversation&nbsp;string&nbsp;has&nbsp;been&nbsp;set&nbsp;prints&nbsp;the&nbsp;conversation&nbsp;to&nbsp;the&nbsp;player.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="character.html#Character">Character</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="character.html#Character">Character</a>:<br>
+<dl><dt><strong>victory_count</strong> = 0</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Friend">class <strong>Friend</strong></a>(<a href="character.html#Character">Character</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>#A&nbsp;subclass&nbsp;of&nbsp;character&nbsp;for&nbsp;your&nbsp;friends.&nbsp;But&nbsp;with&nbsp;friends&nbsp;like&nbsp;these,&nbsp;who&nbsp;needs&nbsp;enemies?<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="character.html#Friend">Friend</a></dd>
+<dd><a href="character.html#Character">Character</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Friend-__init__"><strong>__init__</strong></a>(self, char_name, char_description)</dt><dd><tt>Creates&nbsp;a&nbsp;new&nbsp;friend&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="Friend-get_gift"><strong>get_gift</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;gift&nbsp;needed&nbsp;for&nbsp;a&nbsp;friend&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="Friend-get_gift_conversation"><strong>get_gift_conversation</strong></a>(self)</dt><dd><tt>Gets&nbsp;a&nbsp;friend&nbsp;characters&nbsp;gift&nbsp;conversation.</tt></dd></dl>
+
+<dl><dt><a name="Friend-give_gift"><strong>give_gift</strong></a>(self, gift_name)</dt></dl>
+
+<dl><dt><a name="Friend-set_gift"><strong>set_gift</strong></a>(self, gift_name)</dt><dd><tt>Sets&nbsp;the&nbsp;gift&nbsp;needed&nbsp;for&nbsp;a&nbsp;friend&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="Friend-set_gift_conversation"><strong>set_gift_conversation</strong></a>(self, conversation_string)</dt><dd><tt>Sets&nbsp;the&nbsp;gift&nbsp;conversation&nbsp;for&nbsp;a&nbsp;friend&nbsp;character</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="character.html#Character">Character</a>:<br>
+<dl><dt><a name="Friend-describe"><strong>describe</strong></a>(self)</dt><dd><tt>Prints&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;character&nbsp;and&nbsp;its&nbsp;description.</tt></dd></dl>
+
+<dl><dt><a name="Friend-fight"><strong>fight</strong></a>(self, combat_item)</dt><dd><tt>Generic&nbsp;characters&nbsp;and&nbsp;<a href="#Friend">Friend</a>&nbsp;characters&nbsp;will&nbsp;not&nbsp;fight&nbsp;with&nbsp;the&nbsp;player.</tt></dd></dl>
+
+<dl><dt><a name="Friend-get_bribe"><strong>get_bribe</strong></a>(self)</dt><dd><tt>Returns&nbsp;acharacter's&nbsp;bribe&nbsp;amount.</tt></dd></dl>
+
+<dl><dt><a name="Friend-get_status"><strong>get_status</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;integer&nbsp;value&nbsp;of&nbsp;how&nbsp;many&nbsp;characters&nbsp;have&nbsp;been&nbsp;helped&nbsp;or&nbsp;defeated.</tt></dd></dl>
+
+<dl><dt><a name="Friend-set_bribe"><strong>set_bribe</strong></a>(self, bribe_amount)</dt><dd><tt>Sets&nbsp;the&nbsp;bribe&nbsp;amount&nbsp;for&nbsp;a&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="Friend-set_conversation"><strong>set_conversation</strong></a>(self, conversation)</dt><dd><tt>Sets&nbsp;the&nbsp;conversation&nbsp;string&nbsp;for&nbsp;a&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="Friend-talk"><strong>talk</strong></a>(self)</dt><dd><tt>If&nbsp;a&nbsp;conversation&nbsp;string&nbsp;has&nbsp;been&nbsp;set&nbsp;prints&nbsp;the&nbsp;conversation&nbsp;to&nbsp;the&nbsp;player.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="character.html#Character">Character</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="character.html#Character">Character</a>:<br>
+<dl><dt><strong>victory_count</strong> = 0</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>
