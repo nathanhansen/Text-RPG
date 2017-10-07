@@ -1,4 +1,5 @@
 class Character():
+    victory_count = 0
 
     # Create a character
     def __init__(self, char_name, char_description):
@@ -27,6 +28,10 @@ class Character():
         print(self.name + " doesn't want to fight with you")
         return True
 
+    # Determine how many characters have been helped or defeated
+    def get_status(self):
+        return Character.victory_count
+
 #A subclass of character for enemy NPCs
 class Enemy(Character):
     def __init__(self, char_name, char_description):
@@ -49,6 +54,7 @@ class Enemy(Character):
     def fight(self, combat_item):
         if combat_item == self.weakness:
             print("You fend " + self.name + " off with the " + combat_item )
+            Character.victory_count +=1
             return True
         else:
             print(self.name + " crushes you, puny adventurer")
@@ -57,6 +63,7 @@ class Enemy(Character):
     def attempt_bribe(self, bribe_amount):
         if bribe_amount >= self.bribe:
             print("You have bribed " + self.name + "with " + str(bribe_amount) + " gold.")
+            Character.victory_count +=1
             return True
         else:
             print(self.name + "was not impressed with your bribe and attacks!")
@@ -93,6 +100,7 @@ class Friend(Character):
         if gift_name == self.gift:
             print(self.name + "accepts the gift and thanks you.")
             print("[" + self.name + " says]: " +self.gift_conversation)
+            Character.victory_count +=1
             return True
         else:
             print(self.name + "is not interested in this item. Sorry.")
