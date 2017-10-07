@@ -15,11 +15,6 @@ class Item():
     def get_description(self):
         return self.description
 
-    # Describe this item
-    def describe(self):
-        print("There is a " self.name + "lying in the room." )
-        print( self.description )
-
     def get_details(self):
         print(self.name)
         print(self.description)

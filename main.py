@@ -1,10 +1,3 @@
-#############################################################
-#Dork - the text-based RPG
-#Author: Nathan Hansen
-#Version: 1.0
-#Date: 10.05.2017
-#############################################################
-
 from room import Room
 from item import Item
 from character import Enemy, Friend
@@ -28,12 +21,6 @@ dining_hall.link_room(kitchen, "north")
 dining_hall.link_room(ballroom, "west")
 ballroom.link_room(dining_hall, "east")
 
-#Let's add items to the rooms
-cheese = Item("cheese", "A large hunk of golden cheddar")
-kitchen.set_item(cheese)
-longsword = Item("longsword", "A long bladed weapon with a leather grip")
-dining_hall.set_item(longsword)
-
 #Create some characters to interact with and place them in their own room
 #Your friend Miranda, who owns the house and provides some hints
 miranda = Friend("Miranda", "The home's owner. An elegant woman sitting at the kitchen table.")
@@ -55,9 +42,8 @@ reggie.set_weakness("longsword")
 reggie.set_bribe(100)
 ballroom.set_character(reggie)
 
-#start the player off in the kitchen with nothing in the backpack
+#start the player off in the kitchen
 current_room = kitchen
-backpack = []
 tracker = True          
 
 #The game's loop. What makes it go
@@ -67,9 +53,6 @@ while tracker == True:
     inhabitant = current_room.get_character()
     if inhabitant is not None:
         inhabitant.describe()
-    loot = current_room.get_item()
-    if loot is not None:
-        loot.describe()
     command = input("> ")    
     # Check what was typed
     if command in ["north", "south", "east", "west"]:
@@ -88,9 +71,6 @@ while tracker == True:
         print("What will you give to " + inhabitant.name + "?")
         gift_given = input()
         inhabitant.give_gift(gift_given)
-    elif command == "take"
-        backpack.append(loot.get_name)
-        current_room.set_item(None)
     else:
         print("I didn't get that command...")
         
